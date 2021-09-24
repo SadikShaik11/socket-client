@@ -7,32 +7,7 @@ const Golive = () => {
   const [token, setToken] = useState('');
   const [status, setStatus] = useState('Offline')
   const [btnstatus, setBtnstatus] = useState('Go Live!')
-  const [doctors, setDoctors] = useState([
-    { 'auth': 1,
-    'charge': "₹700",
-    'docid': 11111111,
-    'rating': 5,
-    'role': "doctor",
-    'specialization': "Physiology",
-    '_id': "614d69958da3349390f1091e" 
-    },
-    { 'auth': 2,
-    'charge': "₹700",
-    'docid': 11111112,
-    'rating': 5,
-    'role': "doctor",
-    'specialization': "Physiology",
-    '_id': "614d69958da3349390f1091e" 
-    },
-    { 'auth': 3,
-    'charge': "₹700",
-    'docid': 11111113,
-    'rating': 5,
-    'role': "doctor",
-    'specialization': "Physiology",
-    '_id': "614d69958da3349390f1091e" 
-    },
-  ])
+  const [doctors, setDoctors] = useState([])
 
   const handleClick = () => {
     setStatus(status === 'Offline' ? 'Online' : 'Offline');
@@ -65,7 +40,7 @@ const Golive = () => {
     <div className="main">
       <div className="div1">
         <h2> {status}</h2>
-        <h4> Enter Live Token here! </h4>
+        <h4> Enter Live Token here </h4>
         <input 
         type="text" 
         className="Token" 
