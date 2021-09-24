@@ -39,7 +39,7 @@ const Golive = () => {
     setBtnstatus(btnstatus === 'Go Live!' ? 'Stop' : 'Go Live!');
 
     if (btnstatus === 'Go Live!') {
-      const socket = io("http://localhost:5000", {  
+      const socket = io("https://live-socket-server.herokuapp.com", {  
         path: "/go-live/",
         query: {
           AuthData: token
@@ -49,13 +49,13 @@ const Golive = () => {
         console.log(error);
       });
     } else {
-      window.open("http://localhost:3000", "_self");
+      window.open("https://socket-client-one.vercel.app", "_self");
       window.close();
     }
   }
 
   const getOnlineDoctors = () => {
-    axios.get('http://localhost:5000/getlivedoctors').then(res => {
+    axios.get('https://live-socket-server.herokuapp.com//getlivedoctors').then(res => {
       console.log(res.data)
       setDoctors(res.data.docs)
     })
