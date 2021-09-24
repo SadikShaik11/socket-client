@@ -59,10 +59,10 @@ const Golive = () => {
         </button>
         
         {doctors.map((doctor) => {
-        const { docid, auth } = doctor;
+        const { docid, name } = doctor;
         return (
-          <li key={auth} className='item'>
-            {docid}
+          <li key={docid} className='item'>
+            { name }
           </li>
         );
       })}
