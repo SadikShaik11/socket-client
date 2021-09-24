@@ -55,7 +55,7 @@ const Golive = () => {
   }
 
   const getOnlineDoctors = () => {
-    axios.get('https://live-socket-server.herokuapp.com//getlivedoctors').then(res => {
+    axios.get('https://live-socket-server.herokuapp.com/getlivedoctors').then(res => {
       console.log(res.data)
       setDoctors(res.data.docs)
     })
