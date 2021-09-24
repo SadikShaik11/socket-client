@@ -39,11 +39,14 @@ const Golive = () => {
     setBtnstatus(btnstatus === 'Go Live!' ? 'Stop' : 'Go Live!');
 
     if (btnstatus === 'Go Live!') {
-      var socket = io("http://localhost:5000", {  
+      const socket = io("http://localhost:5000", {  
         path: "/go-live/",
         query: {
           AuthData: token
         }
+      });
+      socket.io.on("error", (error) => {
+        console.log(error);
       });
     } else {
       window.open("http://localhost:3000", "_self");
@@ -83,7 +86,7 @@ const Golive = () => {
         {doctors.map((doctor) => {
         const { docid, auth } = doctor;
         return (
-          <li key={docid} className='item'>
+          <li key={auth} className='item'>
             {docid}
           </li>
         );
